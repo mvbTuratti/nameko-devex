@@ -37,7 +37,21 @@ echo
 # Test: Get Product
 echo "=== Getting product id: the_odyssey ==="
 curl -s "${STD_APP_URL}/products/the_odyssey" | jq .
-
+#Test: Delete Product
+echo "=== Deleting product id: the_odyssey ==="
+curl -s -XDELETE "${STD_APP_URL}/products/the_odyssey" \
+    -H 'accept: application/json' \
+    -H 'Content-Type: application/json'
+echo
+# Test: Get Product
+echo "=== Getting product id: the_odyssey ==="
+curl -s "${STD_APP_URL}/products/the_odyssey" | jq .
+# Test: Delete non-existent product
+echo "=== Deleting product id: the_odyssey ==="
+curl -s -XDELETE "${STD_APP_URL}/products/the_odyssey" \
+    -H 'accept: application/json' \
+    -H 'Content-Type: application/json'
+echo
 # Test: Create Order
 echo "=== Creating Order ==="
 ORDER_ID=$(
