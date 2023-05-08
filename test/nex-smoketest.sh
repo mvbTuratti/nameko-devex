@@ -93,7 +93,7 @@ ID=$(echo ${ORDER_ID} | jq '.id')
 
 # Test: Get Order back
 echo "=== Getting Order ==="
-curl -s "${STD_APP_URL}/orders/${ID}" | jq .
+curl -s "${STD_APP_URL}/orders/${ORDER_ID}" | jq .
 
 # Test: Get Order back
 echo "=== Getting Order ==="
