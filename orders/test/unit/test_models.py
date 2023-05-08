@@ -35,3 +35,4 @@ def test_can_create_order_detail(db_session):
     assert order_detail_2.product_id == "the_odyssey"
     assert order_detail_2.price == 99.50
     assert order_detail_2.quantity == 2
+    

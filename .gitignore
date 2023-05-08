@@ -11,3 +11,5 @@ htmlcov
 stats.xml
 requirements.txt
 nameko-devex/
+orders/alembic/versions/
+products/alembic/versions/

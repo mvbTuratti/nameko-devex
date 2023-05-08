@@ -1,10 +1,10 @@
 import logging
-
 from nameko.events import event_handler
 from nameko.rpc import rpc
-
 from products import dependencies, schemas
-
+from .exceptions import NotFound
+from starlette.responses import Response
+from fastapi import status
 
 logger = logging.getLogger(__name__)
 

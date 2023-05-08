@@ -9,6 +9,8 @@ app = FastAPI()
 app.include_router(order.router)
 app.include_router(product.router)
 
+
+
 # Setting up nameko cluster rpc client pool connections
 @app.on_event("startup")
 async def startup_event():
