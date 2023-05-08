@@ -82,7 +82,13 @@ def _get_orders(nameko_rpc):
 
 @router.post("", status_code=status.HTTP_200_OK, response_model=schemas.CreateOrderSuccess)
 def create_order(request: schemas.CreateOrder, rpc = Depends(get_rpc)):
-    id_ =  _create_order(request.dict(), rpc)
+    try:
+        id_ =  _create_order(request.dict(), rpc)
+    except OrderNotFound as err:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail=str(err)
+        )
     return {
         'id': id_
     }

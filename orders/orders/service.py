@@ -54,6 +54,7 @@ class OrdersService:
 
         return order
 
+
     @rpc
     def update_order(self, order):
         order_details = {
